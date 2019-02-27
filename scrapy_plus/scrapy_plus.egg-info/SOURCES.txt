@@ -25,3 +25,6 @@ scrapy_plus/middleware/downloader_middleware.py
 scrapy_plus/middleware/spider_middleware.py
 scrapy_plus/utils/__init__.py
 scrapy_plus/utils/log.py
+scrapy_plus/utils/queue.py
+scrapy_plus/utils/set.py
+scrapy_plus/utils/status_clollector.py

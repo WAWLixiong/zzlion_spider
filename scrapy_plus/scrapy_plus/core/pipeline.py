@@ -9,4 +9,4 @@ class Pipeline(object):
         :param item:对象
         :return:
         '''
-        print(item)
+        print(item.data)

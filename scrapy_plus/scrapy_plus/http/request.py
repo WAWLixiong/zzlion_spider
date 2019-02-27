@@ -3,7 +3,8 @@
 class Request(object):
     """完成request对象的封装"""
 
-    def __init__(self, url,callback='parse',meta=None,method='GET', headers=None, params=None, data=None):
+    def __init__(self, url,callback='parse',meta=None,method='GET', headers=None,
+                 params=None, data=None,filter=True):
         '''
         :param url:请求url
         :param method:请求方法GET，POST
@@ -18,3 +19,4 @@ class Request(object):
         self.data = data
         self.callback=callback #添加解析函数
         self.meta=meta #添加一些需要传递的数据
+        self.filter=filter #默认去重
