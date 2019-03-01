@@ -18,11 +18,11 @@ class JdbookSpider(RedisSpider):
     def parse(self, response):
         item = {}
         dt_list = response.xpath('//div[@class="mc"]/dl/dt')
-        for dt in dt_list[:1]:
+        for dt in dt_list:
             item['big_card'] = dt.xpath('./a/text()').extract_first()
             item['big_card_url'] = dt.xpath('./a/@href').extract_first()
             em_list = dt.xpath('./following-sibling::dd/em')
-            for em in em_list[:1]:
+            for em in em_list:
                 item['second_card'] = em.xpath('./a/text()').extract_first()
                 item['second_card_url'] = 'https:' + em.xpath('./a/@href').extract_first()
                 yield Request(url=item['second_card_url'], callback=self.parse_index, meta={'item': deepcopy(item)})
@@ -30,14 +30,15 @@ class JdbookSpider(RedisSpider):
     def parse_index(self, response):
         item = response.meta.get('item')
         li_list = response.xpath('//ul[@class="gl-warp clearfix"]/li')
-        for li in li_list[:1]:
+        for li in li_list:
             item['title'] = li.xpath('.//div[@class="p-name"]/a/em/text()').extract_first().strip()
             item['book_url'] = li.xpath('.//div[@class="p-name"]/a/@href').extract_first()
-            print(item['book_url'])
             yield response.follow(url=item['book_url'], callback=self.parse_detail, meta={'item': deepcopy(item)})
         next = response.xpath('//span[@class="p-num"]/a[@class="pn-next"]/@href').extract_first()
         if next:
-            yield response.follow(url=next, callback=self.parse_index, meta={'item': deepcopy(item)})
+            yield response.follow(url=next, callback=self.parse_index,meta={'item': deepcopy(item),
+                                                                            'dont_redirect':True,
+                                                                            'handle_httpstatus_list':[302]})
 
     def parse_detail(self, response):
         item = response.meta.get('item')
@@ -59,21 +60,29 @@ class JdbookSpider(RedisSpider):
             elif word.startswith('丛书名'):
                 item['book_name'] = li.xpath('./a/text()').extract_first()
                 continue
-        yield response.follow(url=self.price_url.format(id=item['book_id']), callback=self.parse_price,
-                              meta={'item': item})
+        try:
+            item['book_id']
+        except:
+            pass
+        else:
+            yield response.follow(url=self.price_url.format(id=item['book_id']), callback=self.parse_price,
+                                  meta={'item': item})
 
     def parse_price(self, response):
         item = response.meta.get('item')
-        data = json.loads(response.body.decode())
+        data = json.loads(response.body.decode('gbk','ignore'))
         if data[0]:
             item['origin_price'] = data[0].get('op')
             item['sale_price'] = data[0].get('p')
         yield Request(url=self.comment_url.format(id=item['book_id'], page=0), callback=self.parse_maxpage,
-                      meta={'item': item})
+                      meta={'item': deepcopy(item)},dont_filter=True)
 
     def parse_maxpage(self,response):
         item=response.meta.get('item')
-        data=json.loads(response.body.decode('gbk', errors='ignore'))
+        print('_' * 100)
+        data=json.loads(response.body.decode('gbk','ignore'))
+        print(data)
+        print('_' * 100)
         max_page=data.get('maxPage')
         if max_page:
             for i in range(max_page):
@@ -82,7 +91,7 @@ class JdbookSpider(RedisSpider):
 
     def parse_comment(self, response):
         item = response.meta.get('item')
-        data = json.loads(response.body.decode('gbk', errors='ignore'))
+        data = json.loads(response.body.decode('gbk','ignore'))
         comment_list = data.get('comments')
         if len(comment_list):
             for comment in comment_list:
