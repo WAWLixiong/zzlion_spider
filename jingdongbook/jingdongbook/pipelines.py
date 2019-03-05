@@ -35,18 +35,6 @@ class JingdongbookPipeline(object):
         self.client=pymongo.MongoClient(self.mongo_host,self.mongo_port)
         self.collection=self.client['jidong']['jdbook']
 
-    # def process_item(self, item, spider):
-    #     fp=sha1()
-    #     for value in item.values():
-    #         fp.update(str(value).encode())
-    #     fp_value=fp.hexdigest()
-    #     if not self.redis.sismember(self.redis_key,fp_value):
-    #         self.redis.sadd(self.redis_key, fp_value)
-    #         self.collection.insert_one(dict(item))
-    #         return item
-    #     else:
-    #         raise DropItem('item 已经存在')
-
     def process_item(self,item,spider):
         fp=sha1()
         for value in item.values():
@@ -58,7 +46,6 @@ class JingdongbookPipeline(object):
             self.bloomfilter.insert(fp_value)
             self.collection.insert_one(dict(item))
             return item
-
 
     def close_spider(self,spider):
         return self.client.close()

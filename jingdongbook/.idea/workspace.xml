@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ab82de4b-3fd1-424a-93be-86895797527e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jingdongbook/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/jingdongbook/middlewares.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jingdongbook/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jingdongbook/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jingdongbook/spiders/jdbook.py" beforeDir="false" afterPath="$PROJECT_DIR$/jingdongbook/spiders/jdbook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jingdongbook/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/jingdongbook/pipelines.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jingdongbook/spiders/jdbook.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1638">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="462">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
               <folding>
                 <element signature="e#24#58#0" expanded="true" />
               </folding>
@@ -38,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jingdongbook/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="1470">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
               </folding>
@@ -47,11 +45,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jingdongbook/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="69" column="1" lean-forward="true" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+            <state relative-caret-position="822">
+              <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jingdongbook/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -59,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jingdongbook/middlewares.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="372">
+              <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
               <folding>
                 <element signature="e#169#183#0" expanded="true" />
               </folding>
@@ -96,18 +103,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/jingdongbook/main.py" />
-        <option value="$PROJECT_DIR$/jingdongbook/pipelines.py" />
         <option value="$PROJECT_DIR$/jingdongbook/proxy.py" />
         <option value="$PROJECT_DIR$/jingdongbook/test.py" />
         <option value="$PROJECT_DIR$/jingdongbook/middlewares.py" />
         <option value="$PROJECT_DIR$/jingdongbook/settings.py" />
+        <option value="$PROJECT_DIR$/jingdongbook/pipelines.py" />
         <option value="$PROJECT_DIR$/jingdongbook/spiders/jdbook.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="85" />
-    <option name="y" value="25" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="51" />
+    <option name="y" value="60" />
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
@@ -129,12 +136,6 @@
               <item name="jingdongbook" type="b2602c69:ProjectViewProjectNode" />
               <item name="jingdongbook" type="462c0819:PsiDirectoryNode" />
               <item name="jingdongbook" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jingdongbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jingdongbook" type="462c0819:PsiDirectoryNode" />
-              <item name="jingdongbook" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -292,22 +293,22 @@
       <updated>1550844399216</updated>
       <workItem from="1550844400969" duration="10364000" />
       <workItem from="1550883928858" duration="37548000" />
-      <workItem from="1551406168490" duration="17305000" />
+      <workItem from="1551406168490" duration="26191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65217000" />
+    <option name="totallyTimeSpent" value="74103000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16957104" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16957104" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" x="0" y="23" width="1536" height="801" id="Run" order="2" type="WINDOWED" visible="true" weight="0.8611898" />
+      <window_info anchor="bottom" x="22" y="108" width="1492" height="608" id="Run" maximized="true" order="2" weight="0.62889516" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.66855526" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -657,40 +658,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jingdongbook/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="822">
+          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jingdongbook/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="372">
+          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
           <folding>
             <element signature="e#169#183#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jingdongbook/spiders/jdbook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1638">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="e#24#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jingdongbook/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="1470">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jingdongbook/settings.py">
+    <entry file="file://$PROJECT_DIR$/jingdongbook/spiders/jdbook.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="69" column="1" lean-forward="true" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+        <state relative-caret-position="462">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#24#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
